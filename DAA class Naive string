@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include<string.h>
+
+void search(char *t,char *p)
+{
+    int M=strlen(p);
+    int N=strlen(t);
+    int i,j;
+    for(i=0;i<=N-M;i++)
+    {
+        j=0;
+        for(j=0;j<=M;i++)
+        {
+            if(t[i+j]!=p[j])
+            break;
+        }
+        if(j==M)
+        printf("pattern found at index %d",i);
+    }
+}
+
+int main()
+{
+    char text[]="BBCCDDEESS";
+    char pattern[]="DDE";
+    search(text,pattern);
+
+    return 0;
+}
